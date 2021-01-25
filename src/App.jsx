@@ -1,32 +1,35 @@
 import './App.css'
 import React from 'react'
 
-import Primeiro from './components/Primeiro'
-import ComParametro from './components/ComParametro'
-
-import ComFilhos from './components/ComFilhos'
+import Primeiro from './components/basicos/Primeiro'
+import ComParametro from './components/basicos/ComParametro'
+import ComFilhos from './components/basicos/ComFilhos'
 import Card from './components/layout/Card'
-import Repeticao from './components/Repeticao'
-import Condicional from './components/Condicional'
-import CondicionalComIf from './components/CondicionalComIF'
+import Repeticao from './components/basicos/Repeticao'
+import Condicional from './components/basicos/Condicional'
+import CondicionalComIf from './components/basicos/CondicionalComIF'
+import Pai from './components/Comunicacao/direta/Pai'
 
 export default (props) =>
 
     <div className="App">
 
-<Card titulo="#06 - Condicional v2">
-            <CondicionalComIf numero={10}/>
+        <Card titulo="#07 - Comunicao Direta" color="#4298B5">
+            <Pai sobrenome="freitas"/>
+        </Card>
+        <Card titulo="#06 - Condicional v2" color="#FA6900">
+            <CondicionalComIf numero={10} />
         </Card>
 
-<Card titulo="#05 - Condicional v1">
-            <Condicional numero={11}/>
-        </Card>
-        
-        <Card titulo="#04 - Repetição">
-            <Repeticao/>
+        <Card titulo="#05 - Condicional v1" color="#E94C6F">
+            <Condicional numero={11} />
         </Card>
 
-        <Card titulo="#03 - Componente com Filhos">
+        <Card titulo="#04 - Repetição" color="#008BBA">
+            <Repeticao />
+        </Card>
+
+        <Card titulo="#03 - Componente com Filhos" color="#D96459">
             <ComFilhos>
                 <ul>
                     <li>Ana</li>
@@ -36,16 +39,13 @@ export default (props) =>
                 </ul>
             </ComFilhos>
         </Card>
-        <Card titulo="#02 - Componente Com Parametros">
+        <Card titulo="#02 - Componente Com Parametros" color="#FF85CB">
             <ComParametro titulo="Esse é o titulo" subtitulo="Esse é o subtitulo" />
         </Card>
 
 
-        <Card titulo="#01 - Primeiro Componente">
+        <Card titulo="#01 - Primeiro Componente" color="#92B0CA">
             <Primeiro />
         </Card>
-
-
-
 
     </div>;
