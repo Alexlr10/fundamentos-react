@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './contador.css'
 
 export default class Contador extends Component {
 
@@ -9,7 +10,7 @@ export default class Contador extends Component {
 
     inc = () => {
         this.setState({
-            valor: this.state.valor + 1
+            valor: this.state.valor + this.state.passo
         }
         )
     }
@@ -17,20 +18,25 @@ export default class Contador extends Component {
 
     dec = () => {
         this.setState({
-            valor: this.state.valor - 1
+            valor: this.state.valor - this.state.passo
         }
         )
     }
 
     render() {
         return (
-            <div>
+            <div className="Contador">
                 <h2>Contador</h2>
-                <h4>Passo: {this.state.passo}</h4>
+                <div>
+                <label for="passoInput">Passo: </label>
+                <input id="passoInput" type="number" 
+                value={this.state.passo}
+                onChange={e => this.setState({passo: + e.target.value})}></input>
+                </div>
                 <h4>Valor: {this.state.valor}</h4>
                 <div>
-                    <button onClick={this.inc}>+</button>
                     <button onClick={this.dec}>-</button>
+                    <button onClick={this.inc}>+</button>
                 </div>
             </div>
         )
