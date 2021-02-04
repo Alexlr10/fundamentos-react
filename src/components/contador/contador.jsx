@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import './contador.css'
 import Display from './display'
 import PassoForm from './passoForm'
+import Botoes from './botoes'
 
 export default class Contador extends Component {
 
@@ -37,10 +38,7 @@ export default class Contador extends Component {
                 <PassoForm passo={this.state.passo}
                 onPassoChange={this.mudarPasso}/>
                 <Display valor={this.state.valor} />
-                <div>
-                    <button onClick={this.dec}>-</button>
-                    <button onClick={this.inc}>+</button>
-                </div>
+                <Botoes onInc={this.inc} onDec={this.dec}/>
             </div>
         )
     }
